@@ -9,7 +9,8 @@ class zookeeper (
   $properties = undef,
   $realm = '',
   $autopurge_purge_interval = undef,
-  $autopurge_snap_retain_count = undef
+  $autopurge_snap_retain_count = undef,
+  $zookeeper_package_version = undef
 ) inherits zookeeper::params {
   include ::stdlib
 

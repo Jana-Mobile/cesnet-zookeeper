@@ -5,9 +5,9 @@
 class zookeeper::install {
   include ::stdlib
 
-  if $zookeeper::preinstall_pinned_zookeeper {
+  if $zookeeper::zookeeper_package_version != undef {
       package {'zookeeper':
-        ensure => '3.4.5+cdh5.3.3+84-1.cdh5.3.3.p0.8~wheezy-cdh5.3.3',
+        ensure => $zookeeper::zookeeper_package_version,
         before => Package[$zookeeper::packages]
       }
   }
